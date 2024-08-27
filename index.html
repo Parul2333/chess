@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Board</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 130px;
+            font-size: 40px;
+            
+        }
+
+       
+        @media (max-width: 768px) {
+            body {
+                font-size: 30px;
+                margin-top: 100px;
+            }
+        }
+
+        
+        @media (max-width: 480px) {
+            body {
+                font-size: 20px;
+                margin-top: 70px;
+            }
+        }
+
+        
+        @media (max-width: 320px) {
+            body {
+                font-size: 16px;
+                margin-top: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+<script>
+    function print(data) {
+        const label = document.createElement("span");
+        label.textContent = data;
+        document.body.appendChild(label);
+    }
+
+    function newLine() {
+        const br = document.createElement("br");
+        document.body.appendChild(br);
+    }
+
+    const board_size = 8;
+
+    function createChessBoard() {
+        for (let i = 0; i < board_size; i++) {
+            for (let j = 0; j < board_size; j++) {
+                if ((i + j) % 2 === 0) {
+                    print("* ");
+                } else {
+                    print("# ");
+                }
+            }
+            newLine(); 
+        }
+    }
+
+    createChessBoard();
+
+    const label = document.createElement("p");
+    label.textContent = "Chess Board (8 x 8)";
+    document.body.appendChild(label);
+
+</script>
+</body>
+</html>
